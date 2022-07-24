@@ -9,6 +9,7 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 jwt = JWTManager(app)
 
 from datetime import timedelta
+
 from flask_marshmallow import Marshmallow
 from marshmallow.validate import Length
 ma = Marshmallow(app)
