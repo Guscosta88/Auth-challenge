@@ -1,4 +1,4 @@
-from db import db
+from init import db, ma
 
 class Actor(db.Model):
     __tablename__= "ACTORS"
@@ -7,3 +7,11 @@ class Actor(db.Model):
     last_name = db.Column(db.String())
     gender = db.Column(db.String())
     country = db.Column(db.String())
+
+
+class ActorSchema(ma.Schema):
+    class Meta:
+        fields = ("id", "first_name", "last_name", "gender", "country")
+        ordered = True
+# actor_schema = ActorSchema()
+# actors_schema = ActorSchema(many=True)
